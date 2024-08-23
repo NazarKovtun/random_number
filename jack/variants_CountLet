@@ -1,0 +1,57 @@
+# Variant I
+# used template CountList
+
+word_counts: list[(str, int)] = []
+
+for word in self.words_factory.words():
+    not_found = True
+    i = 0
+
+    while i < len(word_counts):
+        word_count = word_counts[i]
+        if word.startswith(word_counts[i][0]):
+            word_counts[i] = (word_count[0], word_count[1]+1)
+            not_found = False
+            break
+        i += 1
+
+    if not_found:
+        word_counts.append((word[0], 1))
+
+return WordCounts(word_counts)
+
+# Variat II
+# used template CountDict
+
+word_counts: dict[str, int] = {}
+
+for word in self.words_factory.words():
+    word_counts[word[0]] = word_counts.get(word[0], 0) + 1
+    
+return WordCounts([(word, count) for word, count in word_counts.items()])
+
+# Вызов вот так
+for word in val.word_count:
+	print(word)
+
+# Variant III
+# used template CountDefaultdict
+
+word_counts = defaultdict(int)
+
+for word in self.words_factory.words():
+	word_counts[word[0]] += 1
+
+return WordCounts([(word, count) for word, count in word_counts.items()])
+
+# Variant IV
+# used template Count
+# не выходит...
+
+word_counts = Counter(self.words_factory.words())
+
+return WordCounts(word_counts.most_common())
+# >>> (word, count)
+return WordCounts([(word[0], count) for word, count in word_counts.most_common()])
+# >>> (word[0], count)
+# первая буква каждого слова и количество слов ()
