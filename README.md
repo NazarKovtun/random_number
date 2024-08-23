@@ -5,9 +5,9 @@ These are examples of random number generation algorithms from 0 to 2^31 using O
 ## What's inside
 This program uses several algorithms for generating random numbers, namely:
 - `RndReal` - uses system time in nanoseconds;
-- `RndPseudo` - uses mathematical formula to datermine a random number;
+- `RndPseudo` - uses mathematical formula to determine a random number;
 - `RndPython` - uses the build-in Python ramdom module;
-- `RndInt` - return random number from 111 to 999 usind any Random generator;
+- `RndInt` - return random number from 111 to 999 using any Random generator;
 - `RndNAZ` - return one char from A-Z using Ascii Unicode;
 - `Rnd09AZ` - return one char from 09-AZ using Ascii Unicode.
 
@@ -34,3 +34,23 @@ def main():
 if __name__ = '__main__':
 	main()
 ```
+
+**If you want use `RndInt`, `RndNAZ` or `Rnd09AZ` you need write**:
+
+`main.py`
+```python
+from RndPseudo import RndPseudo
+from Rnd09AZ import Rnd09AZ  # or RndInt or RndNAZ
+from NsFactory import NsFactory
+from Ns import Ns
+
+def main():
+    rnd = Rnd09AZ(1)
+    ns_factory = NsFactory(rnd)
+    ns = ns_factory.ns()
+    ns.print()
+
+if __name__ = '__main__':
+	main()
+```
+You need to specify `seed` in `Rnd09AZ`.
