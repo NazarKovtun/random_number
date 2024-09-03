@@ -21,12 +21,12 @@ In module `main.py` initialize the generator (`Rnd`), pass it to the factory (`N
 
 `main.py`
 ```python
-from RndPseudo import RndPseudo
+from RndReal import RndReal
 from NsFactory import NsFactory
 from Ns import Ns
 
 def main():
-    rnd = RndPseudo()
+    rnd = RndReal()
     ns_factory = NsFactory(rnd)
     ns = ns_factory.ns()
     ns.print()
@@ -39,7 +39,6 @@ if __name__ = '__main__':
 
 `main.py`
 ```python
-from RndPseudo import RndPseudo
 from Rnd09AZ import Rnd09AZ  # or RndInt or RndNAZ
 from NsFactory import NsFactory
 from Ns import Ns
