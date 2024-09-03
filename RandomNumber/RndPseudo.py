@@ -9,7 +9,6 @@ class RndPseudo(Rnd.Rnd):
         self.c = 11
         self.m = 0x1_0000_0000_0000  # 2^48
 
-    @property
     def next(self) -> int:
         """
         :return: random number using a pseudo-random method
