@@ -10,20 +10,15 @@ from RndInt import RndInt
 
 
 def main() -> None:
-    r2: Rnd = RndPython(1)
-    # r: Rnd = RndPseudo()
-
-    rnd = Rnd09AZ(1)
-    ns_fac = NsFactory(rnd)
-    ns = ns_fac.ns()
+    rnd: Rnd = RndReal()
+    
+    ns_factory = NsFactory(rnd)
+    ns = ns_factory.ns()
     ns.print()
-
-    ns2_factory = NsFactory(r2)
-    ns2 = ns2_factory.ns()
-    ns2.print()
-
-    # ns_factory = NsFactory(r)
-    # ns = ns_factory.ns()
+    
+    # rnd = Rnd09AZ(1)
+    # ns_fac = NsFactory(rnd)
+    # ns = ns_fac.ns()
     # ns.print()
 
 
