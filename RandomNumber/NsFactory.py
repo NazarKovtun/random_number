@@ -16,5 +16,5 @@ class NsFactory:
         """
         :return: Ns object with generator
         """
-        ns_generator: Iterator[int] = (self.r.next for _ in range(self.size))
+        ns_generator: Iterator[int] = (self.r.next() for _ in range(self.size))
         return Ns(ns_generator)
