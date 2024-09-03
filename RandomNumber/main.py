@@ -7,13 +7,13 @@ You can use:
 - RndNAZ;
 - Rnd09AZ.
 """
-from RndPseudo import RndPseudo
+from RndReal import RndReal
 from NsFactory import NsFactory
 from Ns import Ns
 
 
 def main() -> None:
-    rnd = RndPseudo()
+    rnd = RndReal()
     ns_factory = NsFactory(rnd)
     ns = ns_factory.ns()
     ns.print()
