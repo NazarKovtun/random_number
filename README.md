@@ -7,16 +7,16 @@ This program uses several algorithms for generating random numbers, namely:
 - `RndReal` - uses system time in nanoseconds;
 - `RndPseudo` - uses mathematical formula to determine a random number;
 - `RndPython` - uses the build-in Python ramdom module;
-- `RndInt` - return random number from 111 to 999 using any Random generator;
-- `RndNAZ` - return one char from A-Z using Ascii Unicode;
-- `Rnd09AZ` - return one char from 09-AZ using Ascii Unicode.
+- `RndInt` - returns random number from 111 to 999 using any Random generator;
+- `RndNAZ` - returns one char from A-Z using Ascii Unicode;
+- `Rnd09AZ` - returns one char from 09-AZ using Ascii Unicode.
 
 Other files that are important for the program to work:
 - `Rnd` - abstract class from which other generators inherit;
 - `Ns` - outputs characters to the console using Iterator;
 - `NsFactory` - random number factory that returns them as an Iterator;
 
-## How it work
+## How it works
 In module `main.py` initialize the generator (`Rnd`), pass it to the factory (`NsFactory`), and then to the object for output to the console (`Ns`), from which we call the `print()` method.
 
 `main.py`
